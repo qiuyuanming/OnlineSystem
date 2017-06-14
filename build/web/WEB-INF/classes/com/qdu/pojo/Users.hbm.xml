@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-14 14:47:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.qdu.pojo.Users" table="Users" schema="dbo" catalog="onlinestore" optimistic-lock="version">
+        <id name="userId" type="string">
+            <column name="UserID" length="20" />
+            <generator class="assigned" />
+        </id>
+        <property name="userName" type="string">
+            <column name="UserName" not-null="true" />
+        </property>
+        <property name="userPassword" type="string">
+            <column name="UserPassword" length="20" not-null="true" />
+        </property>
+        <property name="userGender" type="string">
+            <column name="UserGender" length="4" not-null="true" />
+        </property>
+        <property name="userPhone" type="string">
+            <column name="UserPhone" length="20" not-null="true" />
+        </property>
+        <property name="userAddress" type="string">
+            <column name="UserAddress" not-null="true" />
+        </property>
+        <property name="userAccount" type="string">
+            <column name="UserAccount" length="30" not-null="true" />
+        </property>
+        <property name="userBalance" type="double">
+            <column name="UserBalance" precision="53" scale="0" not-null="true" />
+        </property>
+        <set name="orderLists" table="OrderList" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="UserID" length="20" not-null="true" />
+            </key>
+            <one-to-many class="com.qdu.pojo.OrderList" />
+        </set>
+    </class>
+</hibernate-mapping>

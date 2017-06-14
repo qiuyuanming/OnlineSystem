@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-14 14:47:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.qdu.pojo.OrderDetails" table="OrderDetails" schema="dbo" catalog="onlinestore" optimistic-lock="version">
+        <id name="orderDetailsId" type="int">
+            <column name="OrderDetailsID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="orderList" class="com.qdu.pojo.OrderList" fetch="select">
+            <column name="OrderID" not-null="true" />
+        </many-to-one>
+        <many-to-one name="product" class="com.qdu.pojo.Product" fetch="select">
+            <column name="ProductID" not-null="true" />
+        </many-to-one>
+        <property name="orderedQty" type="int">
+            <column name="OrderedQty" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

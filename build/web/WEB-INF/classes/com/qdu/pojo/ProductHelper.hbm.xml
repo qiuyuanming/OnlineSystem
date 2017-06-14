@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-14 14:47:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.qdu.pojo.ProductHelper" table="ProductHelper" schema="dbo" catalog="onlinestore" optimistic-lock="version">
+        <id name="id" type="int">
+            <column name="ID" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="product" class="com.qdu.pojo.Product" fetch="select">
+            <column name="ProductID" />
+        </many-to-one>
+        <many-to-one name="salesPromotion" class="com.qdu.pojo.SalesPromotion" fetch="select">
+            <column name="SalesID" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

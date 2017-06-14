@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 2017-6-14 14:47:16 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="com.qdu.pojo.ProductCategory" table="ProductCategory" schema="dbo" catalog="onlinestore" optimistic-lock="version">
+        <id name="categoryId" type="int">
+            <column name="CategoryID" />
+            <generator class="assigned" />
+        </id>
+        <property name="categoryName" type="string">
+            <column name="CategoryName" length="50" not-null="true" />
+        </property>
+        <set name="products" table="Product" inverse="true" lazy="false" fetch="select">
+            <key>
+                <column name="CategoryID" not-null="true" />
+            </key>
+            <one-to-many class="com.qdu.pojo.Product" />
+        </set>
+    </class>
+</hibernate-mapping>
