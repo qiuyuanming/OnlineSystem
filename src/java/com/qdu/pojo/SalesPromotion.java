@@ -3,6 +3,7 @@ package com.qdu.pojo;
 
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,8 @@ public class SalesPromotion  implements java.io.Serializable {
 
      private int salesId;
      private int salesPromotion;
-     private Serializable salesBegin;
-     private Serializable salesEnd;
+     private Date salesBegin;
+     private Date salesEnd;
      private Double salesDiscount;
      private String salesTitle;
      private Set productHelpers = new HashSet(0);
@@ -24,13 +25,13 @@ public class SalesPromotion  implements java.io.Serializable {
     }
 
 	
-    public SalesPromotion(int salesId, int salesPromotion, Serializable salesBegin, Serializable salesEnd) {
+    public SalesPromotion(int salesId, int salesPromotion, Date salesBegin, Date salesEnd) {
         this.salesId = salesId;
         this.salesPromotion = salesPromotion;
         this.salesBegin = salesBegin;
         this.salesEnd = salesEnd;
     }
-    public SalesPromotion(int salesId, int salesPromotion, Serializable salesBegin, Serializable salesEnd, Double salesDiscount, String salesTitle, Set productHelpers) {
+    public SalesPromotion(int salesId, int salesPromotion, Date salesBegin, Date salesEnd, Double salesDiscount, String salesTitle, Set productHelpers) {
        this.salesId = salesId;
        this.salesPromotion = salesPromotion;
        this.salesBegin = salesBegin;
@@ -58,14 +59,14 @@ public class SalesPromotion  implements java.io.Serializable {
         return this.salesBegin;
     }
     
-    public void setSalesBegin(Serializable salesBegin) {
+    public void setSalesBegin(Date salesBegin) {
         this.salesBegin = salesBegin;
     }
     public Serializable getSalesEnd() {
         return this.salesEnd;
     }
     
-    public void setSalesEnd(Serializable salesEnd) {
+    public void setSalesEnd(Date salesEnd) {
         this.salesEnd = salesEnd;
     }
     public Double getSalesDiscount() {

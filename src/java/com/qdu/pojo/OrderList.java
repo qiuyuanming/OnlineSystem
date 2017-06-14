@@ -3,6 +3,7 @@ package com.qdu.pojo;
 
 
 import java.io.Serializable;
+import java.sql.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,7 +15,7 @@ public class OrderList  implements java.io.Serializable {
 
      private int orderId;
      private Users users;
-     private Serializable orderTime;
+     private Date orderTime;
      private int orderStatus;
      private Set orderDetailses = new HashSet(0);
 
@@ -22,13 +23,13 @@ public class OrderList  implements java.io.Serializable {
     }
 
 	
-    public OrderList(int orderId, Users users, Serializable orderTime, int orderStatus) {
+    public OrderList(int orderId, Users users, Date orderTime, int orderStatus) {
         this.orderId = orderId;
         this.users = users;
         this.orderTime = orderTime;
         this.orderStatus = orderStatus;
     }
-    public OrderList(int orderId, Users users, Serializable orderTime, int orderStatus, Set orderDetailses) {
+    public OrderList(int orderId, Users users, Date orderTime, int orderStatus, Set orderDetailses) {
        this.orderId = orderId;
        this.users = users;
        this.orderTime = orderTime;
@@ -54,7 +55,7 @@ public class OrderList  implements java.io.Serializable {
         return this.orderTime;
     }
     
-    public void setOrderTime(Serializable orderTime) {
+    public void setOrderTime(Date orderTime) {
         this.orderTime = orderTime;
     }
     public int getOrderStatus() {

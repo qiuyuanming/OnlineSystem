@@ -13,11 +13,11 @@ public class Users  implements java.io.Serializable {
 
 
      private String userId;
-     private Serializable userName;
+     private String userName;
      private String userPassword;
      private String userGender;
      private String userPhone;
-     private Serializable userAddress;
+     private String userAddress;
      private String userAccount;
      private double userBalance;
      private Set orderLists = new HashSet(0);
@@ -26,7 +26,7 @@ public class Users  implements java.io.Serializable {
     }
 
 	
-    public Users(String userId, Serializable userName, String userPassword, String userGender, String userPhone, Serializable userAddress, String userAccount, double userBalance) {
+    public Users(String userId, String userName, String userPassword, String userGender, String userPhone, String userAddress, String userAccount, double userBalance) {
         this.userId = userId;
         this.userName = userName;
         this.userPassword = userPassword;
@@ -36,7 +36,7 @@ public class Users  implements java.io.Serializable {
         this.userAccount = userAccount;
         this.userBalance = userBalance;
     }
-    public Users(String userId, Serializable userName, String userPassword, String userGender, String userPhone, Serializable userAddress, String userAccount, double userBalance, Set orderLists) {
+    public Users(String userId, String userName, String userPassword, String userGender, String userPhone, String userAddress, String userAccount, double userBalance, Set orderLists) {
        this.userId = userId;
        this.userName = userName;
        this.userPassword = userPassword;
@@ -59,7 +59,7 @@ public class Users  implements java.io.Serializable {
         return this.userName;
     }
     
-    public void setUserName(Serializable userName) {
+    public void setUserName(String userName) {
         this.userName = userName;
     }
     public String getUserPassword() {
@@ -87,7 +87,7 @@ public class Users  implements java.io.Serializable {
         return this.userAddress;
     }
     
-    public void setUserAddress(Serializable userAddress) {
+    public void setUserAddress(String userAddress) {
         this.userAddress = userAddress;
     }
     public String getUserAccount() {
@@ -111,10 +111,6 @@ public class Users  implements java.io.Serializable {
     public void setOrderLists(Set orderLists) {
         this.orderLists = orderLists;
     }
-
-
-
-
 }
 
 
