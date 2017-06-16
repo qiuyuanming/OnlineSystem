@@ -40,7 +40,7 @@ public class ProductReport {
         Label computer = new Label(1,1,"Computer");
         sheet.addCell(computer);
         Label high = new Label(2,1,"higer");
-        
+      
         workbook.write();
         workbook.close();
         os.close();
