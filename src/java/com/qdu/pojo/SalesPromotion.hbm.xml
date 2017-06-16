@@ -6,7 +6,7 @@
     <class name="com.qdu.pojo.SalesPromotion" table="SalesPromotion" schema="dbo" catalog="onlinestore" optimistic-lock="version">
         <id name="salesId" type="int">
             <column name="SalesID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <property name="salesPromotion" type="int">
             <column name="SalesPromotion" not-null="true" />

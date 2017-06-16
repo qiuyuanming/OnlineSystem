@@ -6,12 +6,12 @@
     <class name="com.qdu.pojo.OrderList" table="OrderList" schema="dbo" catalog="onlinestore" optimistic-lock="version">
         <id name="orderId" type="int">
             <column name="OrderID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="users" class="com.qdu.pojo.Users" fetch="select">
             <column name="UserID" length="20" not-null="true" />
         </many-to-one>
-        <property name="orderTime" type="data">
+        <property name="orderTime" type="date">
             <column name="OrderTime" not-null="true" />
         </property>
         <property name="orderStatus" type="int">

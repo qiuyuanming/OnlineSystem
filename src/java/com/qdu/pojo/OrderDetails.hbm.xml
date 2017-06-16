@@ -6,7 +6,7 @@
     <class name="com.qdu.pojo.OrderDetails" table="OrderDetails" schema="dbo" catalog="onlinestore" optimistic-lock="version">
         <id name="orderDetailsId" type="int">
             <column name="OrderDetailsID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="orderList" class="com.qdu.pojo.OrderList" fetch="select">
             <column name="OrderID" not-null="true" />

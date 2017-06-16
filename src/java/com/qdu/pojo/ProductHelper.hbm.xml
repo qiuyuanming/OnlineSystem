@@ -6,7 +6,7 @@
     <class name="com.qdu.pojo.ProductHelper" table="ProductHelper" schema="dbo" catalog="onlinestore" optimistic-lock="version">
         <id name="id" type="int">
             <column name="ID" />
-            <generator class="assigned" />
+            <generator class="identity" />
         </id>
         <many-to-one name="product" class="com.qdu.pojo.Product" fetch="select">
             <column name="ProductID" />
