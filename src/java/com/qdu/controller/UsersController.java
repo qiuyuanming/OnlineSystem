@@ -28,7 +28,7 @@ public class UsersController {
         map.addAttribute("user", service.getUser(userId));
         return "editUser";
     }
-
+    
     @RequestMapping(value = "/editUser")
     public String editUser(Users user, ModelMap map) {
         service.editUser(user);
