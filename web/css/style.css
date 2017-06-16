@@ -1,0 +1,74 @@
+@charset "utf-8";
+
+body{
+    font-family:微软雅黑;
+}
+
+h1{
+    color: green;
+}
+
+input[type="submit"]{
+    background-color: green;
+    color: white;
+    width: 60px;
+    height: 30px;
+    border-radius: 10px;
+    border: none;
+}
+
+input[type="submit"]:hover{
+    cursor:pointer;
+    background-color: brown;
+    text-decoration: underline;
+}
+
+a{
+    background-color: orange;
+    border-radius: 10px;
+    font-size: 14px;
+    padding: 5px;
+    color: brown;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
+}
+
+span{
+    color: brown;
+    font-weight: bold;
+}
+legend{
+    color: brown;
+    font-size: 22px;
+}
+
+fieldset{
+    padding: 20px;
+    width: 600px;
+}
+table{
+    width: 100%;
+    border-spacing: 20px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+th{
+    background-color: teal;
+    color: white;
+    padding: 5px;
+}
+
+td{
+    background-color: bisque;
+    padding: 5px;
+}
+h2{
+    background-color: activecaption;
+    color: brown;
+    text-align:center;
+    padding: 5px 0;
+}
