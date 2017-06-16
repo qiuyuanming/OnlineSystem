@@ -11,10 +11,10 @@
         <property name="salesPromotion" type="int">
             <column name="SalesPromotion" not-null="true" />
         </property>
-        <property name="salesBegin" type="string">
+        <property name="salesBegin" type="date">
             <column name="SalesBegin" not-null="true" />
         </property>
-        <property name="salesEnd" type="string">
+        <property name="salesEnd" type="date">
             <column name="SalesEnd" not-null="true" />
         </property>
         <property name="salesDiscount" type="java.lang.Double">
