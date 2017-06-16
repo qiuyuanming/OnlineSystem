@@ -14,7 +14,6 @@
     <mapping resource="com/qdu/pojo/ProductCategory.hbm.xml"/>
     <mapping resource="com/qdu/pojo/Product.hbm.xml"/>
     <mapping resource="com/qdu/pojo/SalesPromotion.hbm.xml"/>
-    <mapping resource="com/qdu/pojo/Sysdiagrams.hbm.xml"/>
     <mapping resource="com/qdu/pojo/OrderDetails.hbm.xml"/>
     <mapping resource="com/qdu/pojo/Users.hbm.xml"/>
   </session-factory>

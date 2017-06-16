@@ -6,7 +6,6 @@
   <table-filter match-name="Product"/>
   <table-filter match-name="OrderDetails"/>
   <table-filter match-name="ProductCategory"/>
-  <table-filter match-name="sysdiagrams"/>
   <table-filter match-name="SalesPromotion"/>
   <table-filter match-name="ProductHelper"/>
   <table-filter match-name="Users"/>
