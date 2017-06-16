@@ -12,7 +12,6 @@ import java.util.Set;
  */
 public class Product  implements java.io.Serializable {
 
-
      private int productId;
      private ProductCategory productCategory;
      private String productName;
