@@ -61,11 +61,21 @@ public class ProductDao {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
         //Query query = session.cancelQuery("from product");
-        Query query = session.createQuery("from prodcut");
+        Query query = session.createQuery("from Product");
         List list = query.list();
         session.getTransaction().commit();
         session.close();
         return list;
     }
-
+    /*
+        public List getUserList(){
+        Session session=sessionFactory.openSession();
+        session.beginTransaction();
+        Query query=session.createQuery("from Users");
+        List list=query.list();
+        session.getTransaction().commit();
+        session.close();
+        return list;
+    }
+    **/
 }
