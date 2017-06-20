@@ -41,7 +41,7 @@ public class OrderListDao {
         }
         return list1;
     }
-
+    
     public List getCustomerByTime() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -55,8 +55,6 @@ public class OrderListDao {
             ListUtil lu = new ListUtil((Users) row[0],(OrderList) row[1], (OrderDetails) row[2], (Product) row[3]);
             list1.add(lu);
         }
-
         return list1;
-
     }
 }

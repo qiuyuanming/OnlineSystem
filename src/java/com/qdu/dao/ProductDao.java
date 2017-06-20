@@ -6,6 +6,8 @@
 package com.qdu.dao;
 
 import com.qdu.pojo.Product;
+import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
@@ -60,22 +62,37 @@ public class ProductDao {
     public List getProductList(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        //Query query = session.cancelQuery("from product");
         Query query = session.createQuery("from Product");
         List list = query.list();
         session.getTransaction().commit();
         session.close();
         return list;
     }
-    /*
-        public List getUserList(){
-        Session session=sessionFactory.openSession();
+    
+    //根据任意时间段查询 产品列表，比如，上个月添加产品的列表
+    public List getProductListByTime(Date beginTime, Date endTime){  
+        Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Query query=session.createQuery("from Users");
-        List list=query.list();
+        //根据时间段来查询  物品列表   只是查询时间段 不需 联表查询。
+        Query query = session.createQuery("from Product p where p.addProductDate >=:beginTime and p.addProductDate <=:endTime ");
+        query.setDate("beginTime", beginTime);
+        query.setDate("endTime", endTime);
+        
+        List<Object[]> list = (List<Object[]>)query.list();
         session.getTransaction().commit();
         session.close();
-        return list;
+        //ArrayList()
+        ArrayList<Product> productList = new ArrayList<>();
+        for(int i=0; i < productList.size(); i++){
+            Product row = productList.get(i);
+            // product = new Product(row[i]);
+            //list.add();
+        }
+        
+        
+        
+        return null;
+        
+        
     }
-    **/
 }
