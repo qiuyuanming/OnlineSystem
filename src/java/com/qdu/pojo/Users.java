@@ -83,7 +83,7 @@ public class Users  implements java.io.Serializable {
     public void setUserPhone(String userPhone) {
         this.userPhone = userPhone;
     }
-    public Serializable getUserAddress() {
+    public String getUserAddress() {
         return this.userAddress;
     }
     
