@@ -51,7 +51,7 @@ public class OrderList  implements java.io.Serializable {
     public void setUsers(Users users) {
         this.users = users;
     }
-    public Serializable getOrderTime() {
+    public Date getOrderTime() {
         return this.orderTime;
     }
     
