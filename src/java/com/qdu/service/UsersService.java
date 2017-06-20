@@ -12,6 +12,9 @@ public class UsersService {
     @Autowired
     private UsersDao usersDao;
     
+//    public List getUserList(){
+//        return usersDao.getUserList();
+//    }
     public List getUserList(){
         return usersDao.getUserList();
     }
