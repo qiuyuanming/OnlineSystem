@@ -18,23 +18,29 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/product")
 public class ProductController {
+
     @Autowired
     private ProductService service;
-    
+
     //查看产品列表
     @RequestMapping(value = "/showAllProducts")
-    public String showAllProduct(ModelMap map){
-        map.addAttribute("uList",service.getProductList());// 这里不是addAllAtttibute() 请注意一下。
+    public String showAllProduct(ModelMap map) {
+        map.addAttribute("uList", service.getProductList());// 这里不是addAllAtttibute() 请注意一下。
         return "productList";
     }
+
     //编辑产品信息
     @RequestMapping(value = "/editProducts")
-    public String forEditProduct(int productID,ModelMap map){
+    public String forEditProduct(int productID, ModelMap map) {
         //map.addAttribute("editProduct",service.updateProduct());
         return "editProduct";
     }
-    
-    
-    
-    
+
+    //删除产品信息
+    @RequestMapping(value = "/deleteProducts")
+    public String deleteProduct(int productId) {
+        service.detelteProduct(productId);
+        return "productList";
+    }
+
 }
