@@ -21,22 +21,27 @@ public class ProductService {
     @Autowired
     private ProductDao productDao;
 
+    //获取所有产品的列表
     public List getProductList() {
         return productDao.getProductList();
     }
 
+    //获取 一个 产品的 具体信息
     public Product getProduct(int productID) {
         return productDao.getProduct(productID);
     }
 
+    //增加一个产品
     public void addProduct(Product newProduct) {
         productDao.insert(newProduct);
     }
 
+    //更新一个产品
     public void updateProduct(Product updateProduct) {
         productDao.update(updateProduct);
     }
 
+    //删除一个产品
     public void detelteProduct(int productID) {
         productDao.delete(productID);
     }
