@@ -1,39 +1,25 @@
 package com.qdu.dao;
 
-import com.qdu.pojo.Users;
+import com.qdu.pojo.*;
+import com.qdu.pojo.Menu;
 import java.util.List;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.hibernate.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class UsersDao {
+public class MenuDao {
 
     @Autowired
     private SessionFactory sessionFactory;
 
-    public int insert(Users newUser) {
-        try {
-            Session session = sessionFactory.openSession();
-            Transaction tran = session.beginTransaction();
-            session.save(newUser);
-            tran.commit();
-            session.close();
-            return 1;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-
-    public int update(Users updatedUser) {
+    public int insert(Menu newMenu) {
         try {
             Session session = sessionFactory.openSession();
             session.beginTransaction();
-            session.update(updatedUser);
+            session.save(newMenu);
             session.getTransaction().commit();
             session.close();
             return 1;
@@ -43,31 +29,39 @@ public class UsersDao {
         return 0;
     }
 
-    public void delete(String userId) {
+    public void update(Menu updatedMenu) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Object user = session.get(Users.class, userId);
-        session.delete(user);
+        session.update(updatedMenu);
         session.getTransaction().commit();
         session.close();
     }
 
-    public Users getUser(String userId) {
+    public void delete(int menuId) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Users user = (Users) session.get(Users.class, userId);
+        Object menu = session.get(Menu.class, menuId);
+        session.delete(menu);
         session.getTransaction().commit();
         session.close();
-        return user;
     }
 
-    public List getUserList() {
+    public List getMenuList() {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
-        Query query = session.createQuery("from Users");
+        Query query = session.createQuery("from Menu");
         List list = query.list();
         session.getTransaction().commit();
         session.close();
         return list;
+    }
+
+    public Menu getMenu(int menuId) {
+        Session session = sessionFactory.openSession();
+        session.beginTransaction();
+        Menu menu = (Menu) session.get(Menu.class, menuId);
+        session.getTransaction().commit();
+        session.close();
+        return menu;
     }
 }
