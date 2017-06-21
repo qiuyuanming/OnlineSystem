@@ -55,7 +55,7 @@ public class Users  implements java.io.Serializable {
     public void setUserId(String userId) {
         this.userId = userId;
     }
-    public Serializable getUserName() {
+    public String getUserName() {
         return this.userName;
     }
     
