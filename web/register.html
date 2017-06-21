@@ -1,34 +1,128 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>学生注册</title>
+
+    <head lang="en">
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="css/style.css" rel="stylesheet ">
+        <title>注册</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="renderer" content="webkit">
+        <meta http-equiv="Cache-Control" content="no-siteapp" />
+
+        <link rel="stylesheet" href="AmazeUI-2.4.2/assets/css/amazeui.min.css" />
+        <link href="css/dlstyle.css" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" type="text/css" href="css/ionicons.min.css"> 
+        <script src="AmazeUI-2.4.2/assets/js/jquery.min.js"></script>
+        <script src="AmazeUI-2.4.2/assets/js/amazeui.min.js"></script>
+
+
     </head>
+
     <body>
-        <h1>学生注册</h1>
-        <hr>
-        <form action="users/register.do" method="post">
-            编号：<input type="text" name="userId" value="U004" >
-            <br><br>
-            姓名：<input type="text" name="userName" value="刘丽">
-            <br><br>
-            密码：<input type="password" name="userPassword" value="123456">
-            <br><br>
-            性别：
-            <input type="radio" name="userGender" value="男">男
-            <input type="radio" name="userGender" value="女" checked="checked">女
-            <br><br>
-            联系方式：<input type="text" name="userPhone" value="13567899043">
-            <br><br>
-            地址：<input type="text" name="userAddress" value="山东省">
-            <br><br>
-            购物卡号：<input type="text" name="userAccount" value="6228450248090879974">
-            <br><br>
-            卡内余额：<input type="text" name="userBalance" value="3000">
-            <br><br>
-            <input type="submit" value="提交注册">
-        </form>
+
+        <div class="login-boxtitle">
+            <a href="home/demo.html"><img alt="" src="images/logobig.png" /></a>
+        </div>
+
+        <div class="res-banner">
+            <div class="res-main">
+                <div class="login-banner-bg"><span></span><img src="images/big.jpg" /></div>
+                <div class="login-box">
+
+                    <div class="am-tabs" id="doc-my-tabs">
+                        <ul class="am-tabs-nav am-nav am-nav-tabs am-nav-justify">
+                            <li style="text-align:center;font-weight:bold;">用户注册</li>
+                        </ul>
+
+
+                        <div class="am-tab-panel">
+                            <form action="users/register.do" method="post">
+                                <div class="user-number">
+                                    <label for="number"><i class="am-icon-user-plus am-icon-sm"></i></label>
+                                    <input type="tel" name="userId" id="phone" placeholder="用户编号" value="U024">
+                                </div>	
+                                <div class="user-phone">
+                                    <label for="phone"><i class="am-icon-mobile-phone am-icon-md"></i></label>
+                                    <input type="tel" name="userPhone" id="phone" placeholder="请输入手机号" value="13567899043">
+                                </div>																			
+                                <div class="user-name">
+                                    <label for="name"><i class="am-icon-user am-icon-sm"></i></label>
+                                    <input type="tel" name="userName" id="phone" placeholder="设置昵称" value="刘丽">
+                                </div>	
+                                <div class="user-gender">
+                                    <label for="gender" style="position:relative"><i class="am-icon-transgender-alt am-icon-sm"></i></label>
+                                    <select name="userGender" class="ggg" style="height:26px; position:absolute;backgrounnd:red!important;left:50px;bottom:10px;">
+                                        <option value="男">男</option>
+                                        <option value="女">女</option>
+                                    </select>
+
+
+                                </div>	
+                                <div class="user-address">
+                                    <label for="address"><i class="am-icon-home am-icon-sm"></i></label>
+                                    <input type="tel" name="userAddress" id="phone" placeholder="地址" value="山东省">
+                                </div>						
+                                <div class="user-pass">
+                                    <label for="password"><i class="am-icon-lock"></i></label>
+                                    <input type="password" name="userPassword" id="password" placeholder="设置密码" value="123456">
+                                </div>										
+                                <div class="user-account">
+                                    <label for="account"><i class="am-icon-money"></i></label>
+                                    <input type="password" name="userAccount" id="passwordRepeat" placeholder="账户" value="6228450248090879974">
+                                </div>	
+                                <div class="user-balance">
+                                    <label for="balance"><i class="am-icon-jpy"></i></label>
+                                    <input type="password" name="userBalance" id="passwordRepeat" placeholder="余额" value="3000">
+                                </div>	
+                                <div class="am-cf" style="margin:auto">
+                                    <input type="submit" name="" value="注册" class="am-btn am-btn-primary am-btn-sm am-fl">
+                                </div>
+                            </form>
+                            <!--                            <div class="login-links">&nbsp;&nbsp;&nbsp;
+                                                            <label for="reader-me">
+                                                                <input id="reader-me" type="checkbox"> 点击表示您同意商城《服务协议》
+                                                            </label>
+                                                        </div>-->
+
+
+                            <hr>
+                        </div>
+
+                        <script>
+                            $(function () {
+                                $('#doc-my-tabs').tabs();
+                            })
+                        </script>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="footer ">
+            <div class="footer-hd ">
+                <p>
+                    <a href="# "> Java 13&14 </a>
+                    <b>|</b>
+                    <a href="# ">商城首页</a>
+                    <b>|</b>
+                    <a href="# ">支付宝</a>
+                    <b>|</b>
+                    <a href="# ">物流</a>
+                </p>
+            </div>
+            <div class="footer-bd ">
+                <p>
+                    <<a href="# ">关于我们</a>
+                    <a href="# ">合作伙伴</a>
+                    <a href="# ">联系我们</a>
+                    <a href="# ">网站地图</a>
+                    <em>© 2014-2018 中华牙膏 版权所有.</em>
+                </p>
+            </div>
+        </div>
     </body>
+
 </html>
