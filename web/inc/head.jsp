@@ -14,23 +14,19 @@
         <script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/public.js"></script>
     </head>
-
     <body>
         <!-- 头部 -->
         <div class="head">
             <div class="headL">
-                <img class="headLogo" src="../jsp page/img/headLogo.png" />
+                <img class="headLogo" src="../img/headLogo.png" />
             </div>
             <div class="headR">
                 <p class="p1">
                     欢迎登录
                     <?php echo cookie('name')?>
                 </p>
-
             </div>
-            <!-- onclick="{if(confirm(&quot;确定退出吗&quot;)){return true;}return false;}" -->
         </div>
-
         <div class="closeOut">
             <div class="coDiv">
                 <p class="p1">
@@ -42,8 +38,6 @@
                 </p>
             </div>
         </div>
-
-
-
     </body>
 </html>
+
