@@ -36,10 +36,11 @@
                     <th>密码</th>
                 </tr>
                 <c:forEach items="${productCategory}" var="p">
-                    <tr id="${p.procateCategoryID}">
-                        <td>${p.procateCategoryID}</td>
+                    <tr id="${p.procateCategoryId}">
+                        <td>${p.procateCategoryId}</td>
                         <td>${p.procateCategoryName}</td>
                     </tr>
+                    
                 </c:forEach>
             </table>
         </fieldset>

@@ -44,11 +44,12 @@
                 </tr>
                 <c:forEach items="${uList}" var="u">
                     <tr id="${u.productId}">
-                        <td>${u.productId}</td>
+                        <td >${u.productId}</td>
                         <td>${u.productName}</td>
-                      
-         
+                        <a href="getProducts?prouctId=${product.productId}">this </a>
+                        
                     </tr>
+                   
                 </c:forEach>
             </table>
         </fieldset>
