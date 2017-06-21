@@ -22,7 +22,7 @@
 
 
 
-        </head>
+    </head>
 
     <body>
 
@@ -31,7 +31,7 @@
                 <div class="topmenu">
                     <div class="menu-hd">
                         <a href="#" target="_top" class="h">欢迎您,</a>
-                        <a href="#" target="_top">用户名</a>
+                        <a href="#" target="_top">${user.userName}</a>
                     </div>
                 </div>
 
@@ -48,10 +48,9 @@
             </div>
             <div class="sidebar1">
                 <ul class="nav">
-                    <li><a href="personalinfo.jsp">我的资料</a></li>
+                    <li><a href="viewUser?userId=${user.userId}">我的资料</a></li>
                     <li><a href="orderManagement.jsp">订单管理</a></li>
-                    <li><a href="correctinfo.jsp">修改信息</a></li>
-                    <li><a href="#">退出</a></li>
+                    <li><a href="forEditInfo?userId=${user.userId}">修改信息</a></li>
                 </ul>
                 <div class="left">
 
@@ -66,10 +65,14 @@
                     <div class="information">
                         <div class="touxiang"></div>
                         <form >
-                            昵&nbsp;称：<input type="text"  />
-                            密&nbsp;码：<input type="password"/>
-                            地&nbsp;址：<input type="text"/>
-                            手机号:<input type="text"/>
+                            编&nbsp;号：<input type="text" style="background:#BABABA;" name="userId" readonly="true" value="${user.userId}" >
+                            昵&nbsp;称：<input type="text"  name="userName" value="${user.userName}" />
+                            密&nbsp;码：<input type="password" name="userPassword" value="${user.userPassword}"/>
+                            性&nbsp;别：<input type="text" name="userGender" value="${user.userGender}">
+                            地&nbsp;址：<input type="text" name="userAddress" value="${user.userAddress}"/>
+                            手机号:<input type="text" name="userPhone" value="${user.userPhone}"/>
+                            购物卡:<input type="text" name="userAccount" style="background:#BABABA;" readonly="true" value="${user.userAccount}">
+                            余&nbsp;&nbsp;额：<input type="text" name="userBalance" style="background:#BABABA;" readonly="true" value="${user.userBalance}">
                             <input id="ai-topsearch" class="submit am-btn" value="提交" index="1" type="submit">
 
                         </form>
