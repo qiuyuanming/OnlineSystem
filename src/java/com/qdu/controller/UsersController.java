@@ -22,6 +22,7 @@ public class UsersController {
         return "userList";
     }
 
+    //查看某一个用户
     @RequestMapping(value = "/viewUser")
     public String viewUser(String userId, ModelMap map) {
         map.addAttribute("user", service.getUser(userId));

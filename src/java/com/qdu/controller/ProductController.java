@@ -43,4 +43,11 @@ public class ProductController {
         return "productList";
     }
 
+    //查看某一个产品  的信息：  也就是产品的详细页面
+    @RequestMapping(value = "/getProducts")
+    public String getProductInfo(int productId){
+        service.getProduct(productId);
+        return "introduction.jsp";
+    }
+    
 }
