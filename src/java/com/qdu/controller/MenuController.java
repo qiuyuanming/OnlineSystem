@@ -20,7 +20,7 @@ public class MenuController {
         map.addAttribute("mList", service.getMenuList());
         return "menuList";
     }
-
+    
     //编辑用户
     @RequestMapping(value = "/forEditMenu")
     public String forEditMenu(int menuId, ModelMap map) {
@@ -45,7 +45,7 @@ public class MenuController {
 
     @RequestMapping(value = "/forAddMenu")
     public String forAddMenu() {
-        return "addMenu";
+        return "menuadd";
     }
 
     @RequestMapping(value = "/addMenu")
