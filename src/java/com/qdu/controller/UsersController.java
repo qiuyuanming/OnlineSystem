@@ -25,7 +25,7 @@ public class UsersController {
     @RequestMapping(value = "/viewUser")
     public String viewUser(String userId, ModelMap map) {
         map.addAttribute("user", service.getUser(userId));
-        return "userInfo";
+        return "personalinfo";
     }
 
     //编辑用户
@@ -37,7 +37,7 @@ public class UsersController {
 
     @RequestMapping(value = "/editUser")
     public String editUser(Users user, ModelMap map) {
-        System.out.println("----------------"+user.getUserPassword());
+        System.out.println("----------------" + user.getUserPassword());
         System.out.println(user.getUserId());
         service.editUser(user);
         map.addAttribute("uList", service.getUserList());
@@ -48,7 +48,7 @@ public class UsersController {
     @RequestMapping(value = "/forEditInfo")
     public String forEditInfo(String userId, ModelMap map) {
         map.addAttribute("user", service.getUser(userId));
-        return "editInfo";
+        return "correctinfo";
     }
 
     @RequestMapping(value = "/editInfo")
@@ -59,7 +59,7 @@ public class UsersController {
         } else {
             map.addAttribute("msg", "修改失败，请检查信息");
         }
-        return "editInfo";
+        return "correctinfo";
     }
 
     //删除用户
@@ -93,9 +93,21 @@ public class UsersController {
         Users user = service.validateUser(userId, password);
         if (user != null) {
             map.addAttribute("user", user);
-            return "loginSuccess";
+            return "index";
         } else {
-            return "loginFail";
+            return "login";
+        }
+    }
+
+    @RequestMapping(value = "/admin.do")
+    public String validateAdmin(String userId, String password, ModelMap map) {
+        Users user = service.validateUser(userId, password);
+        if (user != null) {
+            map.addAttribute("user", user);
+            return "index1";
+        } else {
+            map.addAttribute("msg", "登录失败，请重新登录");
+            return "adminLogin";
         }
     }
 
@@ -105,9 +117,9 @@ public class UsersController {
         if (service.registerUser(newUser)) {
             map.addAttribute("msg", "注册成功，请转到<a href='javascript:history.go(-2);'>登录页面</a>登录！");
         } else {
-            map.addAttribute("msg", "注册失败，该学号已经注册，请<a href='javascript:history.back();'>返回</a>重试！");
+            map.addAttribute("msg", "注册失败，该学号已经注册，请重试！");
         }
-        return "registerResult"; //注册完跳转到registerResult页面
+        return "register";
     }
 
 }
