@@ -22,13 +22,11 @@
         <div class="container">
 
             <div class="leftsidebar_box">
-                <a href="index.html" target="main"><div class="line">
+                <a href="index.html" target="main">
+                    <div class="line">
                         <img src="../img/coin01.png" />&nbsp;&nbsp;首页
-                    </div></a>
-                <!-- <dl class="system_log">
-                <dt><img class="icon1" src="../img/coin01.png" /><img class="icon2"src="../img/coin02.png" />
-                        首页<img class="icon3" src="../img/coin19.png" /><img class="icon4" src="../img/coin20.png" /></dt>
-        </dl> -->
+                    </div>
+                </a>
                 <a href="order.html">
                     <dl class="system_log">
                         <dt>
