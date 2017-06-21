@@ -31,7 +31,7 @@
                 <div class="topmenu">
                     <div class="menu-hd">
                         <a href="#" target="_top" class="h">欢迎您,</a>
-                        <a href="#" target="_top">用户名</a>
+                        <a href="#" target="_top">${user.userName}</a>
                     </div>
                 </div>
 
@@ -48,10 +48,9 @@
             </div>
             <div class="sidebar1">
                 <ul class="nav">
-                     <li><a href="personalinfo.jsp">我的资料</a></li>
+                     <li><a href="viewUser?userId=${user.userId}">我的资料</a></li>
                     <li><a href="orderManagement.jsp">订单管理</a></li>
-                    <li><a href="correctinfo.jsp">修改信息</a></li>
-                    <li><a href="#">退出</a></li>
+                    <li><a href="forEditInfo?userId=${user.userId}">修改信息</a></li>
                 </ul>
                 <div class="left">
 
@@ -65,10 +64,10 @@
                     </div>
                     <div class="information">
                         <div class="touxiang"></div>
-                        <div class="lable">用户名：*** </div>
-                        <div class="lable"> 账户余额：*****</div>
-                        <div class="lable"> 地址：*********</div>
-                        <div class="lable"> 联系方式：********</div>
+                        <div class="lable">用户昵称：${user.userName}</div>
+                        <div class="lable"> 账户余额：${user.userBalance}</div>
+                        <div class="lable"> 地&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;址：${user.userAddress}</div>
+                        <div class="lable"> 联系方式：${user.userPhone}</div>
                     </div>
 
 
