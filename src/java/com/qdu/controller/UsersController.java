@@ -22,18 +22,44 @@ public class UsersController {
         return "userList";
     }
 
+    @RequestMapping(value = "/viewUser")
+    public String viewUser(String userId, ModelMap map) {
+        map.addAttribute("user", service.getUser(userId));
+        return "userInfo";
+    }
+
     //编辑用户
     @RequestMapping(value = "/forEditUser")
     public String forEditUser(String userId, ModelMap map) {
         map.addAttribute("user", service.getUser(userId));
         return "editUser";
     }
-    
+
     @RequestMapping(value = "/editUser")
     public String editUser(Users user, ModelMap map) {
+        System.out.println("----------------"+user.getUserPassword());
+        System.out.println(user.getUserId());
         service.editUser(user);
         map.addAttribute("uList", service.getUserList());
         return "userList";
+    }
+
+    //编辑用户个人信息
+    @RequestMapping(value = "/forEditInfo")
+    public String forEditInfo(String userId, ModelMap map) {
+        map.addAttribute("user", service.getUser(userId));
+        return "editInfo";
+    }
+
+    @RequestMapping(value = "/editInfo")
+    public String editInfo(Users user, ModelMap map) {
+        int row = service.editInfo(user);
+        if (row != 0) {
+            map.addAttribute("msg", "个人信息修改成功");
+        } else {
+            map.addAttribute("msg", "修改失败，请检查信息");
+        }
+        return "editInfo";
     }
 
     //删除用户
@@ -42,13 +68,8 @@ public class UsersController {
         service.deleteUser(userId);
         return "userList";
     }
-//    public String deleteUser(String userId,ModelMap map){
-//        service.deleteUser(userId);
-//        map.addAttribute("uList",service.getUserList());
-//        return "userList";
-//    }
-    //添加用户
 
+    //添加用户
     @RequestMapping(value = "/forAddUser")
     public String forAddUser() {
         return "addUser";
@@ -56,9 +77,14 @@ public class UsersController {
 
     @RequestMapping(value = "/addUser")
     public String addUser(Users user, ModelMap map) {
-        service.addUser(user);
-        map.addAttribute("uList", service.getUserList());
-        return "userList";
+        int row = service.addUser(user);
+        if (row != 0) {
+            map.addAttribute("uList", service.getUserList());
+            return "userList";
+        } else {
+            map.addAttribute("msg", "编号已存在，请重新输入编号");
+            return "addUser";
+        }
     }
 
     //用户登录

@@ -22,9 +22,10 @@ public class OrderController {
     }
 
     @RequestMapping(value = "/show")
-    public String show(ModelMap map) {
-        map.addAttribute("cusList", service.getCustomerByTime());
+    public String show(Date time1, Date time2,ModelMap map) {
+        map.addAttribute("map", service.getCustomerByTime(time1, time2));
         return "cusresult";
     }
+    
 
 }
