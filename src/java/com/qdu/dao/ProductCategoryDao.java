@@ -30,7 +30,8 @@ public class ProductCategoryDao {
         session.getTransaction().commit();
         session.close();
     }
-
+    
+    //更新产品分类
     public void updateProductCategory(ProductCategory updateProductCategory) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -39,6 +40,7 @@ public class ProductCategoryDao {
         session.close();
     }
 
+    //删除产品分类
     public void deleteProductCategory(int categoryId) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -47,7 +49,7 @@ public class ProductCategoryDao {
         session.close();
     }
 
-    //查询产品分类
+    //查看这个分类的信息
     public ProductCategory getProductCategory(int categoryId) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -57,6 +59,8 @@ public class ProductCategoryDao {
         return productCategory;
     }
 
+    
+    
     //获取产品分类列表
     public List getProductCategoryList() {
         Session session = sessionFactory.openSession();

@@ -25,7 +25,7 @@ public class ProductDao {
     @Autowired
     private SessionFactory sessionFactory;
 
-    //增加產品
+    //增加一个产品
     public void insert(Product newProduct) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -33,7 +33,8 @@ public class ProductDao {
         session.getTransaction().commit();
         session.close();
     }
-
+    
+    //修改一个产品
     public void update(Product updateProduct) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -42,6 +43,7 @@ public class ProductDao {
         session.close();
     }
 
+    //删除一个产品
     public void delete(int productID) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -50,6 +52,7 @@ public class ProductDao {
         session.close();
     }
 
+    //获取（信息）一个产品  获取的是这个产品的信息
     public Product getProduct(int productID) {
         Session session = sessionFactory.openSession();
         session.beginTransaction();
@@ -59,6 +62,7 @@ public class ProductDao {
         return product;
     }
     
+    //获取产品 列表
     public List getProductList(){
         Session session = sessionFactory.openSession();
         session.beginTransaction();
