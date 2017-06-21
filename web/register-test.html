@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>学生注册</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="css/style.css" rel="stylesheet ">
+    </head>
+    <body>
+        <h1>学生注册</h1>
+        <hr>
+        <form action="users/register.do" method="post">
+            编号：<input type="text" name="userId" value="U004" >
+            <br><br>
+            姓名：<input type="text" name="userName" value="刘丽">
+            <br><br>
+            密码：<input type="password" name="userPassword" value="123456">
+            <br><br>
+            性别：
+            <input type="radio" name="userGender" value="男">男
+            <input type="radio" name="userGender" value="女" checked="checked">女
+            <br><br>
+            联系方式：<input type="text" name="userPhone" value="13567899043">
+            <br><br>
+            地址：<input type="text" name="userAddress" value="山东省">
+            <br><br>
+            购物卡号：<input type="text" name="userAccount" value="6228450248090879974">
+            <br><br>
+            卡内余额：<input type="text" name="userBalance" value="3000">
+            <br><br>
+            <input type="submit" value="提交注册">
+        </form>
+    </body>
+</html>
